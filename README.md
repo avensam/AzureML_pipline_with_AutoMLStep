@@ -15,7 +15,7 @@
 * [Standout Suggestions](#standout-suggestions)
 
 ## Overview of the project
-In this project, I use the Bank Marketing dataset. I used Azure to configure a cloud-based machine learning production model, deploy it, and consume it. I also created, published, and consumed a pipeline. ![Diagram1]( Images/1.archituectureDiag.png "Architectural Diagram") 
+In this project, I use the Bank Marketing dataset. I used Azure to configure a cloud-based machine learning production model, deploy it, and consume it. I also created, published, and consumed a pipeline. ![Diagram1]( Images/1.archituectureDiag.PNG "Architectural Diagram") 
 
 ## Project main steps
 In this project, I followedthe below steps:
@@ -34,19 +34,19 @@ In this project, I followedthe below steps:
  I used the lab Udacity provided to us, so I skipped this step since I'm not authorized to create a security principal.
 
 ### Step1: create a new automated ML run
-1.1 Register data: I uploaded the dataset into Azure ML Studio (Registered Dataset Section) using the url provided in the project.![Diagram2]( 2.bankdata.png "Register data") 
+1.1 Register data: I uploaded the dataset into Azure ML Studio (Registered Dataset Section) using the url provided in the project.![Diagram2]( Images/2.bankdata.PNG "Register data") 
 1.2 Create a compute instance: I used the Standard_DS12_v2 for the Virtual Machine and 1 as the minimum number of nodes.
-1.2 Created an AutoML experiment to run using the Bank Marketing Dataset which was loaded in the Azure Workspace, choosing 'y' as the target column. ![Diagram3]( 3.autoMLcreation.png "Creating AutoML") 
-1.2.1 I ran the model choosing classification as the modeling approach, accuracy for selecting the best model, and reducing Exit Criterion to 1 hour and Concurrency to 5 concurrent iterations max. ![Diagram4]( 4.automl_experiment_running.png "Automl experiment running")
-1.2.2 automl is completed ![Diagram5]( 5.automl_experiment_completed.png "Automl experiment completed")
-1.2.3 automl best model ![Diagram6]( 6.automl_metric_of_bestModel.png "Automl experiment best model")
+1.2 Created an AutoML experiment to run using the Bank Marketing Dataset which was loaded in the Azure Workspace, choosing 'y' as the target column. ![Diagram3]( Images/3.autoMLcreation.PNG "Creating AutoML") 
+1.2.1 I ran the model choosing classification as the modeling approach, accuracy for selecting the best model, and reducing Exit Criterion to 1 hour and Concurrency to 5 concurrent iterations max. ![Diagram4]( Images/4.automl_experiment_running.PNG "Automl experiment running")
+1.2.2 automl is completed ![Diagram5]( Images/5.automl_experiment_completed.PNG "Automl experiment completed")
+1.2.3 automl best model ![Diagram6]( Images/6.automl_metric_of_bestModel.PNG "Automl experiment best model")
 1.2.4 automl best model's metric
 
 ### Step2: Deploy the best model
 To work and interact with the best model we should deploy it. after the deployement is finished it will send us a url where we can send our test data to.
-2.1 first select the best model and deploy it through ACI ![Diagram7]( 7.deploythebestmodel.png "deploy best model")
-2.2 chck the status of deployement that is running ![Diagram8]( 8.deploythebestmodel.png "complete deploy best model") 
-2.3 The model is successfully deployed, and we can access the model endpoint in the Endpoints. ![Diagram9]( 9.endpointaftetdeployementsuccessed.png "deployement completed, check the endpoint") 
+2.1 first select the best model and deploy it through ACI ![Diagram7]( Images/7.deploythebestmodel.PNG "deploy best model")
+2.2 chck the status of deployement that is running ![Diagram8]( Images/8.deploythebestmodel.PNG "complete deploy best model") 
+2.3 The model is successfully deployed, and we can access the model endpoint in the Endpoints. ![Diagram9]( Images/9.endpointaftetdeployementsuccessed.PNG "deployement completed, check the endpoint") 
 
 ### Step3: Enable application insight
 Once you have deployed an ML model, you need to monitor the model's performance—which you can do using Microsoft Azure's Application Insights. Application Insights is an Application Performance Management (APM) service that is available as a feature of Azure Monitor. Such as:
