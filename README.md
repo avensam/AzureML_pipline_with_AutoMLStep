@@ -58,31 +58,31 @@ Exceptions. You may train a new mode and put it into production, but then find i
 Now that the Best Model is deployed, enable Application Insights and retrieve logs. Although this is configurable at deploy time with a check-box, it is useful to be able to run code that will enable it for you.
 
 3.1 create a log.py
-3.1. make sure az login works ![Diagram10]( 10.ranlogs.png   "Run the log") 
+3.1. make sure az login works ![Diagram10](  Images/10.ranlogs.PNG   "Run the log") 
 3.2. name your deployement and open a terminal and run logs.py
 3.3.By running the logs.py script, we enable Application Insight.
-![Diagram11]( 11.applicationinsightenabled.png   "Application insight is enabled") 
+![Diagram11](  Images/11.applicationinsightenabled.PNG   "Application insight is enabled") 
 
 ## step4: Swagger Documentation
 4.1.go to endpoint and copy the swagger url
-4.2 open the swagger url and right click and save as swagger.json in the same folder as swagger ![Diagram11]( 12.swagger2.png   "open swagger url") 
+4.2 open the swagger url and right click and save as swagger.json in the same folder as swagger ![Diagram11](  Images/12.swagger2.PNG  "open swagger url") 
 4.3 open the swagger.sh and change the port to 9000. The port "8080" is an internal port of the swagger-ui docker container, that we don't change. we modify the swagger.sh file to use port 9000
 4.3 Run doocker: got to the swagger folder, in the terminal/git bash write bash swagger.sh, this will run swagger.sh 
-![Diagram13]( 13.swagger.sh ran1.png   "running swagger.sh1") 
-![Diagram14]( 14.swagger.sh ran3.png   "running swagger.sh2") 
-![Diagram15]( 15.docker has been created.png   "15.docker has been created") 
+![Diagram13](  Images/13.swagger.sh%20ran1.PNG   "running swagger.sh1") 
+![Diagram14](  Images/14.swagger.sh%20ran2.PNG   "running swagger.sh2") 
+![Diagram15](  Images/15.docker%20has%20been%20created.PNG   "15.docker has been created") 
 
-4.4 the you go to http://localhost:9000 you will see another project ![Diagram16]( 16.localhost9000.png  "localhost9000") 
+4.4 the you go to http://localhost:9000 you will see another project ![Diagram16](  Images/16.localhost9000.PNG  "localhost9000") 
 4.5 go to the swagger folder, open another git bash, make sure serve.py is there and uses port 8000 and run python serve.py
 4.6 now go to the http://localhost:9000 and type http://localhost:8000/swagger.json in the explorer 
-4.7 after running .py the project will be shown in the swagger ![Diagram17]( 17.after runing .py.png  "project in the swagger") 
-7.8. after runnin you can see the model detail in the swagger : ![Diagram18]( 18. model detail in swagger.png  "project in the swagger") 
+4.7 after running .py the project will be shown in the swagger ![Diagram17](  Images/17.after%20runing%20.PNG  "project in the swagger") 
+7.8. after runnin you can see the model detail in the swagger : ![Diagram18](  Images/18.%20model%20detail%20in%20swagger.PNG  "project in the swagger") 
 
 ## step5:Consume model endpoints
 
 5.1 go to endpoints > consume
 5.1 take the key and rest endpoint
-5.2 ran the endpoint.py script to get inference from the deployed model. ![Diagram19]( 19. endpoint runr.png  "project in the swagger")  
+5.2 ran the endpoint.py script to get inference from the deployed model. ![Diagram19](  Images/19.%20endpoint%20run.PNG  "project in the swagger")  
 
 ## step6:Create, Publish and Consume a Pipeline
 For this step, I used the aml-pipelines-with-automated-machine-learning-step Jupyter Notebook to create a Pipeline
@@ -90,9 +90,9 @@ For this step, I used the aml-pipelines-with-automated-machine-learning-step Jup
 I created, consumed and published the best model for the bank marketing dataset using AutoML with Python SDK.After updating the notebook to have the same keys, URI, dataset, cluster, and model names already created, I run through the cells to create a pipeline.
  6.1 go to the AzureML studio > notebook: upload all starter files. 
  6.2 make sure all the names are alligned with the experiment we just created. make sure the config.json file is uploaded
- 6.3 ![Diagram20]( 20.rundetailspipline.png  "run piplin and show details")
- 6.4 go to the pipline and check the pipline is completed ![Diagram21]( 21.piplinecompleted.png  "piplinecompleted")
- 6.5 go to the pipline and check the pipline click on the experiment completed ![Diagram22]( 21.piplineexperimentcompleted.png  "piplineexperimentcompleted")
+ 6.3 ![Diagram20](  Images/20.rundetailspipline.PNG  "run piplin and show details")
+ 6.4 go to the pipline and check the pipline is completed ![Diagram21](  Images/21.piplinecompleted.PNG  "piplinecompleted")
+ 6.5 go to the pipline and check the pipline click on the experiment completed ![Diagram22](  Images/21.piplineexperimentcompleted.PNG  "piplineexperimentcompleted")
  6.6 after the pipline is completed, we can publish the pipline and this will enables a REST endpoint to rerun the pipline from any httplibrary fro any platform. 
 Get the REST url from the endpoint property of the published pipeline object. You can also find the REST url in your workspace in the portal. Build an HTTP POST request to the endpoint, specifying your authentication header. Additionally, add a JSON payload object with the experiment name and the batch size parameter. As a reminder, the process_count_per_node is passed through to ParallelRunStep because you defined it is defined as a PipelineParameter object in the step configuration.
 
