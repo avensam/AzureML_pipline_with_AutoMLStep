@@ -1,0 +1,74 @@
+Step 1: Authentication
+In this step, you will need to install the Azure Machine Learning Extension which allows you to interact with Azure Machine Learning Studio, part of the az command. After having the Azure machine Learning Extension, you will create a Service Principal account and associate it with your specific workspace. You will also be instructed to take screenshots to document your work.
+
+1.az login # authenticate your account
+2.az extension add -n azure-cli-ml  #The Azure Machine Learning extension allows you to interact with Azure Machine Learning Studio, part of the az command. Ensure it is installed with the following command:
+3.az ad sp create-for-rbac --sdk-auth --name ml-auth #Create the Service Principal with az after login in
+4.az ad sp show --id xxxxxxxx-3af0-4065-8e14-xxxxxxxxxxxx
+5.az ml workspace share -w Demo -g demo --user xxxxxxxx-cbdb-4cfd-089f-xxxxxxxxxxxx --role owner  #Assign the role to the new Service Principal for the given Workspace, Resource Group and User objectId
+
+
+Step 2: Automated ML Experiment
+At this point, security is enabled and authentication is completed. In this step, you will create an experiment using Automated ML, configure a compute cluster, and use that cluster to run the experiment.
+1.  create a new automated ML run
+2. Select and upload dataset
+3. create a new automated ML experiment
+4. configure a new compute cluster, select standard_DS12_v2 for the VM and minumm number nodes as 1
+5. run the experiment using classification and ensure explain best model is checked
+6. in the Exit criterion, reduce default 3hrs-1 and reduce the concurrency from default to 5
+
+
+Step1: create a new automated ML run
+1.1 Register data: I uploaded the dataset into Azure ML Studio (Registered Dataset Section) using the url provided in the project.
+1.2 Create a compute instance: I used the Standard_DS12_v2 for the Virtual Machine and 1 as the minimum number of nodes.
+1.2 Created an AutoML experiment to run using the Bank Marketing Dataset which was loaded in the Azure Workspace, choosing 'y' as the target column.
+1.2.1 I ran the model choosing classification as the modeling approach, accuracy for selecting the best model, and reducing Exit Criterion to 1 hour and Concurrency to 5 concurrent iterations max.
+1.2.2 automl is completed
+1.2.3 automl best model
+1.2.4 automl best model's metric
+
+Step2: Deploy the best model
+To work and interact with the best model we should deploy it. after the deployement is finished it will send us a url where we can send our test data to.
+2.1 first select the best model and deploy it through ACI
+2.2 chck the status of deployement that is running
+2.3The model is successfully deployed, and we can access the model endpoint in the Endpoints.
+
+Step3:Enable application insight
+Once you have deployed an ML model, you need to monitor the model's performance—which you can do using Microsoft Azure's Application Insights. Application Insights is an Application Performance Management (APM) service that is available as a feature of Azure Monitor. Such as:
+Request rate. The request rate allows you to figure out how many times your model is being called. If it's being called quite frequently, you may want to have a larger cluster.
+Response time. For example, if your application is getting very long response times and it's doing computer vision, you might need to switch to a GPU inference end point.
+Failure rate. If your application is failing more than it should (e.g., it has a 20% failure rate) this is something that you may be able to address with an infrastructure change or by using a different model.
+Exceptions. You may train a new mode and put it into production, but then find it doesn't fit with the data structure of what your request is expecting—a situation like this will generate an exception, which you can then address.
+
+Now that the Best Model is deployed, enable Application Insights and retrieve logs. Although this is configurable at deploy time with a check-box, it is useful to be able to run code that will enable it for you.
+
+3.1 create a log.py
+3.1. make sure az login works
+3.2. name your deployement and open a terminal and run logs.py
+3.3.By running the logs.py script, we enable Application Insight.
+
+
+step4:Swagger Documentation
+4.1.got to endpoint and copy the swagger url
+4.2.download the json file and place it in the swagger folder: go to the folder of swager, in terminal write wget(url) or right click and save the file in swagger folder as .json
+The port "8080" is an internal port of the swagger-ui docker container, that we don't change. we modify the swagger.sh file to use port 9000
+4.3 Run doocker: in the terminal write bash swagger.sh. this will run swagger.sh
+4.4. then we need to provide our custom swagger.json to swagger-ui - http://localhost:8000/swagger.json. This is done by starting a local (again, on the same machine) python server using the serve.py script (in another terminal running: python server.py).The python webserver does nothing more than serving local files, it is running go to:localhost
+4.5.Note that the swagger-ui and the python server must NOT run on the same port.
+4.6This is the default Swagger documentation before running the swagger.sh script.
+4.7After running the script, we can find our best model's documentation instead of the default Swagger page.
+http://localhost:8000/swagger.json, click explopre and the model detailsc come
+python serve.p
+
+step5:Consume model endpoints
+
+5.1go to endpoints > consume
+5.1 take the key and rest endpoint
+5.2 ran the endpoint.py script to get inference from the deployed model.
+
+
+step6:Create, Publish and Consume a Pipeline
+For this step, I used the aml-pipelines-with-automated-machine-learning-step Jupyter Notebook to create a Pipeline
+
+I created, consumed and published the best model for the bank marketing dataset using AutoML with Python SDK.After updating the notebook to have the same keys, URI, dataset, cluster, and model names already created, I run through the cells to create a pipeline.
+Figure 28: Pipeline in Azure Studio
