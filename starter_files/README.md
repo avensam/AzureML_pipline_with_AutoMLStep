@@ -88,5 +88,12 @@ Now that the Best Model is deployed, enable Application Insights and retrieve lo
 For this step, I used the aml-pipelines-with-automated-machine-learning-step Jupyter Notebook to create a Pipeline
 
 I created, consumed and published the best model for the bank marketing dataset using AutoML with Python SDK.After updating the notebook to have the same keys, URI, dataset, cluster, and model names already created, I run through the cells to create a pipeline.
- 6.1 go to the AzureML studio > notebook: upload all starte files
- 6.2 make sure all the names are alligned with the experiment we just created
+ 6.1 go to the AzureML studio > notebook: upload all starter files. 
+ 6.2 make sure all the names are alligned with the experiment we just created. make sure the config.json file is uploaded
+ 6.3 ![Diagram20]( 20.rundetailspipline.png  "run piplin and show details")
+ 6.4 go to the pipline and check the pipline is completed ![Diagram21]( 21.piplinecompleted.png  "piplinecompleted")
+ 6.5 go to the pipline and check the pipline click on the experiment completed ![Diagram22]( 21.piplineexperimentcompleted.png  "piplineexperimentcompleted")
+ 6.6 after the pipline is completed, we can publish the pipline and this will enables a REST endpoint to rerun the pipline from any httplibrary fro any platform. 
+Get the REST url from the endpoint property of the published pipeline object. You can also find the REST url in your workspace in the portal. Build an HTTP POST request to the endpoint, specifying your authentication header. Additionally, add a JSON payload object with the experiment name and the batch size parameter. As a reminder, the process_count_per_node is passed through to ParallelRunStep because you defined it is defined as a PipelineParameter object in the step configuration.
+
+
