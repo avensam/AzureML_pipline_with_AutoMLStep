@@ -15,7 +15,7 @@
 * [Standout Suggestions](#standout-suggestions)
 
 ## Overview of the project
-In this project, I use the Bank Marketing dataset. I used Azure to configure a cloud-based machine learning production model, deploy it, and consume it. I also created, published, and consumed a pipeline. ![Diagram1]( 1.archituectureDiag.png "Architectural Diagram") 
+In this project, I use the Bank Marketing dataset. I used Azure to configure a cloud-based machine learning production model, deploy it, and consume it. I also created, published, and consumed a pipeline. ![Diagram1]( Images/1.archituectureDiag.png "Architectural Diagram") 
 
 ## Project main steps
 In this project, I followedthe below steps:
