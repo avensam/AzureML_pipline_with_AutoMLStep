@@ -34,7 +34,12 @@ Below are the steps I followed in this project:
  I used the lab Udacity provided to us, so I skipped this step since I'm not authorized to create a security principal.
 
 ### Step 1: create a new automated ML run
-1.1 Register data: I uploaded the dataset into Azure ML Studio (Registered Dataset Section) using the url provided in the project. 
+
+
+1.1 Register data: 
+first we need to make sure the data is available:
+![Diagram0]( Images/0.datascreenshot.PNG "Register data")
+I uploaded the dataset into Azure ML Studio (Registered Dataset Section) using the url provided in the project. 
 ![Diagram2]( Images/2.bankdata.PNG "Register data")
 
 1.2 Create a compute instance: I used the Standard_DS12_v2 for the Virtual Machine and 1 as the minimum number of nodes.
