@@ -130,6 +130,8 @@ Now that the Best Model is deployed, enable Application Insights and retrieve lo
 4.8 after runnin you can see the model detail in the swagger:
 ![Diagram18](  Images/18.%20model%20detail%20in%20swagger.PNG  "project in the swagger") 
 
+swagger runs on localhost showing the HTTP API methods and responses for the model 
+![Diagram18.1](  Images/API%20response.PNG  "swagger runs on localhost ") 
 
 ## step 5: Consume model endpoints
 
