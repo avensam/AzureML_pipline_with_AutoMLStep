@@ -150,7 +150,8 @@ For this step, I used the aml-pipelines-with-automated-machine-learning-step Jup
  
 6.2 make sure all the names are alligned with the experiment we just created. make sure the config.json file is uploaded
 ![Diagram20](  Images/20.rundetailspipline.PNG  "run pipline and show details")
- 
+![Diagram22](  Images/piplinecreated.PNG  "pipline created") 
+
 6.3 go to the pipline and check the pipline is completed 
 ![Diagram21](  Images/21.piplinecompleted.PNG  "piplinecompleted")
  
