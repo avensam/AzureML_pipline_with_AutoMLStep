@@ -160,7 +160,9 @@ For this step, I used the aml-pipelines-with-automated-machine-learning-step Jup
  
 6.5 after the pipline is completed, we can publish the pipline and this will enables a REST endpoint to rerun the pipline from any httplibrary fro any platform. 
 Get the REST url from the endpoint property of the published pipeline object. You can also find the REST url in your workspace in the portal. Build an HTTP POST request to the endpoint, specifying your authentication header. Additionally, add a JSON payload object with the experiment name and the batch size parameter. As a reminder, the process_count_per_node is passed through to ParallelRunStep because you defined it is defined as a PipelineParameter object in the step configuration.
-![Diagram22]( Images/22.restendpoint.PNG  "rest endpoint completed")
+![Diagram22]( Images/restEndpoint.PNG  "rest endpoint completed")
+![Diagram23]( Images/piplinenedpoint.PNG "piplinene endpoint")
+![Diagram24]( Images/piplineactive.PNG "piplinene active")
 
 ## Future Improvements
 1. As we have enough features and we have not taken the complexity of features in to account, it would be a good suggestion to enable DeepLearning as well. although it may take time, but it worth checking the performance and the complex patterns that DL may learn
