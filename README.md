@@ -13,9 +13,13 @@
     * [Create and publish a pipeline](#create-and-publish-a-pipeline)
 * [Screen Recordin](#screen-recording)
 * [Standout Suggestions](#standout-suggestions)
+* [Future Improvements](#Future_Improvements)
 
 ## Overview of the project
-In this project, I used Azure to configure a cloud-based machine learning production to model, deploy, and consume it. I also created, published, and consumed a pipeline.  I used the Bank Marketing dataset.  ![Diagram1]( Images/1.archituectureDiag.PNG "Architectural Diagram") 
+In this project, I used Azure to configure a cloud-based machine learning production to model, deploy, and consume it for the Bank Marketing Dataset. This data includes information about marketing campaings for a bank. I used AutoML for the task of classification to predict if the bank would subscribe for a customer or not. I also created, published, and consumed a pipeline.  
+
+I used the Bank Marketing dataset.  ![Diagram1]( Images/1.archituectureDiag.PNG "process flow diagram") 
+I used the Bank Marketing dataset.  ![Diagram1.1]( Images/arch.PNG "Architectural Diagram") 
 
 ## Project main steps
 Below are the steps I followed in this project:
@@ -145,3 +149,9 @@ For this step, I used the aml-pipelines-with-automated-machine-learning-step Jup
 Get the REST url from the endpoint property of the published pipeline object. You can also find the REST url in your workspace in the portal. Build an HTTP POST request to the endpoint, specifying your authentication header. Additionally, add a JSON payload object with the experiment name and the batch size parameter. As a reminder, the process_count_per_node is passed through to ParallelRunStep because you defined it is defined as a PipelineParameter object in the step configuration.
 ![Diagram22]( Images/22.restendpoint.PNG  "rest endpoint completed")
 
+## Future Improvements
+1. As we have enough features and we have not taken the complexity of features in to account, it would be a good suggestion to enable DeepLearning as well. although it may take time, but it worth checking the performance and the complex patterns that DL may learn
+2. We have chosen the exit criterion to be 1hr, however increasing it to 3-5 hrs may improve the accuracy
+We can increase the Exit Criterion time from 1 hour to the default value of 3 hours to be able to find models of higher accuracy.
+
+ [Youtube Link](https://www.youtube.com/watch?v=dsJhRnQl4M0)
