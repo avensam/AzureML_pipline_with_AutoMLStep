@@ -16,10 +16,12 @@
 * [Future Improvements](#Future_Improvements)
 
 ## Overview of the project
-In this project, I used Azure to configure a cloud-based machine learning production to model, deploy, and consume it for the Bank Marketing Dataset. This data includes information about marketing campaings for a bank. I used AutoML for the task of classification to predict if the bank would subscribe for a customer or not. I also created, published, and consumed a pipeline.  
+In this project, I used Azure to configure a cloud-based machine learning production to model, deploy, and consume it for the [Marketing Dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv). This data includes information about marketing campaings for a bank. I used AutoML for the task of classification to predict if the bank would subscribe for a customer or not. I also created, published, and consumed a pipeline.  
 
 I used the Bank Marketing dataset.  ![Diagram1]( Images/1.archituectureDiag.PNG "process flow diagram") 
 I used the Bank Marketing dataset.  ![Diagram1.1]( Images/arch.PNG "Architectural Diagram") 
+
+[Youtube Link](https://www.youtube.com/watch?v=dsJhRnQl4M0)
 
 ## Project main steps
 Below are the steps I followed in this project:
@@ -154,4 +156,4 @@ Get the REST url from the endpoint property of the published pipeline object. Yo
 2. We have chosen the exit criterion to be 1hr, however increasing it to 3-5 hrs may improve the accuracy
 We can increase the Exit Criterion time from 1 hour to the default value of 3 hours to be able to find models of higher accuracy.
 
- [Youtube Link](https://www.youtube.com/watch?v=dsJhRnQl4M0)
+
