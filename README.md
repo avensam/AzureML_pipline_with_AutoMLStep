@@ -98,12 +98,12 @@ Now that the Best Model is deployed, enable Application Insights and retrieve lo
 
 3.3 name your deployement and open a terminal and run logs.py
 ![Diagram3.3](  Images/log1.PNG   "Run logs.py - Application insight is enabled") 
-![Diagram3.3](  Images/log2.PNG   "Run logs.py  Application insight is enabled") 
+
  
 
 3.4 By running the logs.py script, we enable Application Insight.
-![Diagram11](  Images/11.applicationinsightenabled.PNG   "Application insight is enabled") 
-
+ 
+![Diagram11](  Images/log2.PNG   "Run logs.py  "Application insight is enabled") 
 
 ## step 4: Swagger Documentation
 4.1.go to endpoint and copy the swagger url
