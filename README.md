@@ -22,8 +22,8 @@ In this project, I used Azure to configure a cloud-based machine learning produc
 
 
 
-I used the Bank Marketing dataset.  ![Diagram1]( Images/1.archituectureDiag.PNG "process flow diagram") 
-I used the Bank Marketing dataset.  ![Diagram1.1]( Images/arch.PNG "Architectural Diagram") 
+![Diagram1]( Images/1.archituectureDiag.PNG "process flow diagram") 
+![Diagram1.1]( Images/arch.PNG "Architectural Diagram") 
 
 
 
