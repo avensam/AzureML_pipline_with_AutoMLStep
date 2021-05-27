@@ -14,7 +14,7 @@
 * [Screen Recordin](#screen-recording)
 * [Standout Suggestions](#standout-suggestions)
 * [Future Improvements](#Future_Improvements)
-* [Youtube Link](https://www.youtube.com/watch?v=dsJhRnQl4M0)
+* [Youtube Link](https://www.youtube.com/watch?v=1K_T7O9KjQs)
 
 ## Overview of the project
 In this project, I used Azure to configure a cloud-based machine learning production to model, deploy, and consume it for the [Marketing Dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv). This data includes information about marketing campaings for a bank. I used AutoML for the task of classification to predict if the bank would subscribe for a customer or not. I also created, published, and consumed a pipeline.  
